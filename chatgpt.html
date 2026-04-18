@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" id="main-html">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>موقعي السياحي - فيديو محلي</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <button class="lang-btn" onclick="toggleLanguage()" id="langBtn">English</button>
+
+    <div class="video-container">
+        <video autoplay muted loop playsinline id="bg-video">
+            <source src="myvideo.mp4" type="video/mp4">
+            متصفحك لا يدعم تشغيل الفيديو.
+        </video>
+    </div>
+
+    <div class="content">
+        <h1 id="mainTitle">اكتشف المعالم المصرية</h1>
+        </div>
+
+    <a href="https://wa.me/201140080930" class="whatsapp-chat" target="_blank">
+        <span id="waText">اسأل أسئلة مباشرة</span>
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <script>
+        function toggleLanguage() {
+            const htmlTag = document.getElementById('main-html');
+            const langBtn = document.getElementById('langBtn');
+            const mainTitle = document.getElementById('mainTitle');
+            const waText = document.getElementById('waText');
+
+            // إذا كان الموقع حالياً باللغة العربية
+            if (htmlTag.getAttribute('dir') === 'rtl') {
+                htmlTag.setAttribute('dir', 'ltr');
+                htmlTag.setAttribute('lang', 'en');
+                
+                // النصوص الإنجليزية
+                langBtn.innerText = "عربي";
+                mainTitle.innerText = "Discover Egyptian Landmarks";
+                waText.innerText = "Ask questions directly";
+            } 
+            // العودة للغة العربية
+            else {
+                htmlTag.setAttribute('dir', 'rtl');
+                htmlTag.setAttribute('lang', 'ar');
+                
+                // النصوص العربية
+                langBtn.innerText = "English";
+                mainTitle.innerText = "اكتشف المعالم المصرية";
+                waText.innerText = "اسأل أسئلة مباشرة";
+            }
+        }
+    </script>
+</body>
+</html>

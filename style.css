@@ -1,0 +1,105 @@
+/* الإعدادات العامة التي أرسلتها */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Tahoma', sans-serif;
+}
+
+/* تنسيق حاوية الفيديو */
+.video-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: -1;
+    overflow: hidden;
+}
+
+#bg-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لضمان ملء الفيديو للشاشة بدون تشويه */
+}
+
+/* تنسيق المحتوى فوق الفيديو */
+.content {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.4); /* تعتيم خفيف ليظهر النص */
+    color: white;
+    text-align: center;
+}
+
+.content h1 { 
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+}
+
+/* تنسيق الزر الذهبي */
+.btn-explore {
+    padding: 15px 35px;
+    background-color: #d4af37;
+    color: black; /* ليكون النص واضحاً فوق الذهبي */
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn-explore:hover {
+    background-color: #b8962d;
+    transform: scale(1.05);
+}
+
+/* زر الواتساب */
+.whatsapp-chat {
+    position: fixed;
+    bottom: 20px;
+    right: 20px; /* الوضع الافتراضي للعربي */
+    background: #25d366;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    z-index: 1000;
+}
+
+/* زر تبديل اللغة (إضافي) */
+.lang-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px; /* الوضع الافتراضي للعربي */
+    z-index: 1001;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid white;
+    border-radius: 25px;
+    cursor: pointer;
+    backdrop-filter: blur(5px);
+    font-weight: bold;
+}
+
+/* --- تعديلات خاصة عند التحويل للغة الإنجليزية (LTR) --- */
+
+[dir="ltr"] .whatsapp-chat {
+    right: auto;
+    left: 20px; /* ينتقل لليسار في الإنجليزي */
+}
+
+[dir="ltr"] .lang-btn {
+    left: auto;
+    right: 20px; /* ينتقل لليمين في الإنجليزي */
+}
